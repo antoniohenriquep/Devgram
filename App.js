@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { View , Text , StyleSheet, FlatList} from 'react-native';
 import Header from './src/Components/Header';
+import List from './src/Components/List'
 
 export default function App() {
 
   const [feed, setFeed] = useState([
     {
       id: '1',
-      nick:'antoniohp',
+      nick:'pinduca_',
       bio:'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
       profile:'https://m.media-amazon.com/images/M/MV5BMjQyNzM2MjM1Ml5BMl5BanBnXkFtZTcwMDE5NjI3Mg@@._V1_.jpg',
       img:'https://www.geekbinge.com/wp-content/uploads/2014/12/Adam-Sandler-Sony.jpg',
@@ -16,7 +17,7 @@ export default function App() {
     },
     {
       id: '2',
-      nick:'antoniohp',
+      nick:'zezinMilGrau',
       bio:'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
       profile:'https://m.media-amazon.com/images/M/MV5BMjQyNzM2MjM1Ml5BMl5BanBnXkFtZTcwMDE5NjI3Mg@@._V1_.jpg',
       img:'https://www.geekbinge.com/wp-content/uploads/2014/12/Adam-Sandler-Sony.jpg',
@@ -46,8 +47,8 @@ export default function App() {
 
  return (
    <View>
-    <Header/>
     <FlatList
+    ListHeaderComponent={Header}
     data={feed}
     keyExtractor={(item) => item.id}
     renderItem ={({item}) => <List data = {item}/>}
